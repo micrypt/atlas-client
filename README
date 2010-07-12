@@ -1,0 +1,15 @@
+A thin wrapper for the Atlas API (http://www.atlasapi.org) in Python
+
+Features:
+  + Easy acess to the API calls in familiar Python syntax
+
+Souce code: 
+    Library: http://github.com/micrypt/atlas-client
+    Examples: http://github.com/micrypt/atlas-client/examples
+
+Author: Seyi Ogunyemi
+License: MIT
+Dependencies:
+  Python 2.4 or newer
+  Simplejson <http://undefined.org/python/#simplejson>
+    **Included in python 2.6+
