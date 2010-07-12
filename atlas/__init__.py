@@ -3,7 +3,7 @@
 # See LICENSE for details
 
 """
-atlas Twitter API library
+Atlas  API library
 """
 __version__ = '0.1'
 __author__ = 'Seyi Ogunyemi'
