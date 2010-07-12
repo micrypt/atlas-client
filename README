@@ -1,7 +1,7 @@
 A thin wrapper for the Atlas API (http://www.atlasapi.org) in Python
 
 Features:
-  + Easy acess to the API calls in familiar Python syntax
+  + Easy access to the API calls in familiar Python syntax
 
 Souce code: 
     Library: http://github.com/micrypt/atlas-client
