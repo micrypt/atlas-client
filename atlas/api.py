@@ -41,6 +41,9 @@ def call(url, **kw):
     except:
         raise AtlasError("Atlas API IO error")
     mime_type = response.info().type
-    if ((mime_type  == 'application/json') and response):
+    if (response and mime_type.startswith('application/') and mime_type.endswith('json')):
         result = json.load(response)
-    return result
+        return result
+    else:
+        return None
+
