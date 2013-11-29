@@ -13,12 +13,9 @@ BASE_URL = 'https://atlas.metabroadcast.com/3.0/%s.json'
 class API(object):
     """Atlas API"""
     
-    def __getattr__(self, name):
-        try:
-            fn = super(API).__getattr__(name)
-        except AttributeError:
-            fn = MethodType(makeFunc(name), self)
-            setattr(self, name, MethodType(fn, self))
+    def __getattribute__(self, name):
+        fn = MethodType(makeFunc(name), self)
+        setattr(self, name, MethodType(fn, self))
         return fn
         
 def makeFunc(name):
