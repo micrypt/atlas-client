@@ -17,7 +17,7 @@ class API(object):
         try:
             fn = super(API).__getattr__(name)
         except AttributeError:
-            fn = makeFunc(name)
+            fn = MethodType(makeFunc(name), self)
             setattr(self, name, MethodType(fn, self))
         return fn
         
