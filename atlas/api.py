@@ -12,10 +12,7 @@ BASE_URL = 'https://atlas.metabroadcast.com/3.0/%s.json'
 
 class API(object):
     """Atlas API"""
-
-    def find(self):
-        print 'found'
-
+    
     def __getattr__(self, name):
         try:
             fn = super(API).__getattr__(name)
