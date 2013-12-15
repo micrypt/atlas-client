@@ -9,8 +9,8 @@ class AtlasAPITests(unittest.TestCase):
     def setUp(self):
         self.api = API()
 
-    def testitems(self):
-        self.api.items(genre='http://ref.atlasapi.org/genres/atlas/factual', publisher='bbc.co.uk')
+    def testcontent(self):
+        self.api.items(uri='http://www.bbc.co.uk/programmes/b007rsj5', annotations='description,brand_summary,series_summary')
 
     def testbrands(self):
         self.api.brands(title='east', availableCountries='uk', publisher='bbc.co.uk')
