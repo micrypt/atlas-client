@@ -1,4 +1,4 @@
-A thin wrapper for the Atlas API (http://www.atlasapi.org) in Python
+A thin wrapper for the Atlas API (http://atlas.metabroadcast.com) in Python
 
 Features:
   + Easy access to the API calls in familiar Python syntax
