@@ -2,7 +2,8 @@
 # Copyright 2010-2013 - Seyi Ogunyemi
 # See LICENSE for details
 
-import urllib
+from urllib.request import urlopen
+from urllib.parse import urlencode
 from types import MethodType
 
 from atlas.error import AtlasError
@@ -29,9 +30,10 @@ def makeFunc(name):
         url = BASE_URL % name
         json = import_simplejson()
         if kw:
-            url = url + '?' + urllib.urlencode(kw)
+            url = url + '?' + urlencode(kw)
         try:
-            response =  urllib.urlopen(url)
+            print(url)
+            response =  urlopen(url)
         except:
             raise AtlasError("Atlas API IO error")
         mime_type = response.info().type
