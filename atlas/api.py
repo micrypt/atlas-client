@@ -2,7 +2,8 @@
 # Copyright 2010-2013 - Seyi Ogunyemi
 # See LICENSE for details
 
-import urllib
+from urllib.request import urlopen
+from urllib.parse import urlencode
 from types import MethodType
 
 from atlas.error import AtlasError
@@ -29,14 +30,20 @@ def makeFunc(name):
         url = BASE_URL % name
         json = import_simplejson()
         if kw:
-            url = url + '?' + urllib.urlencode(kw)
+            # replace ffrom with from
+            # Note: from is a reserved python keyword, therefore
+            # cannot be used and as such raises SyntaxError
+            if 'ffrom' in kw:
+                kw['from'] = kw.pop('ffrom')
+            
+            url = url + '?' + urlencode(kw)
         try:
-            response =  urllib.urlopen(url)
+            response =  urlopen(url)
         except:
             raise AtlasError("Atlas API IO error")
-        mime_type = response.info().type
+        mime_type = response.info().get_content_type()
         if (response and mime_type.startswith('application/') and mime_type.endswith('json')):
-            result = json.load(response)
+            result = json.loads(response.readall().decode('utf-8'))
             return result
         else:
             return None
