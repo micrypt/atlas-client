@@ -6,6 +6,7 @@ import urllib
 from types import MethodType
 
 from atlas.error import AtlasError
+from atlas.portability import urlopen, urlencode, get_content_type, load_response
 from atlas.utils import *
 
 BASE_URL = 'https://atlas.metabroadcast.com/3.0/%s.json'
@@ -29,14 +30,16 @@ def makeFunc(name):
         url = BASE_URL % name
         json = import_simplejson()
         if kw:
-            url = url + '?' + urllib.urlencode(kw)
+            if 'from_' in kw:
+                kw['from'] = kw.pop('from_')
+            url = url + '?' + urlencode(kw)
         try:
-            response =  urllib.urlopen(url)
+            response =  urlopen(url)
         except:
             raise AtlasError("Atlas API IO error")
-        mime_type = response.info().type
+        mime_type = get_content_type(response.info())
         if (response and mime_type.startswith('application/') and mime_type.endswith('json')):
-            result = json.load(response)
+            result = json.load(load_response(response))
             return result
         else:
             return None
