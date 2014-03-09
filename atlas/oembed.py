@@ -2,9 +2,9 @@
 
 from atlas.api import call
 
-ITEMS_OEMBED = 'http://atlasapi.org/2.0/items.oembed.json'
-BRANDS_OEMBED = 'http://atlasapi.org/2.0/brands.oembed.json'
-PLAYLISTS_OEMBED = 'http://atlasapi.org/2.0/playlists.oembed.json'
+ITEMS_OEMBED = 'https://atlas.metabroadcast.com/3.0/items.oembed.json'
+BRANDS_OEMBED = 'https://atlas.metabroadcast.com/3.0/brands.oembed.json'
+PLAYLISTS_OEMBED = 'https://atlas.metabroadcast.com/3.0/playlists.oembed.json'
 
 class OEmbed(object):
     """Fetch the OEmbed versions of objects."""
