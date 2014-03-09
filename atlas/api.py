@@ -39,7 +39,7 @@ def makeFunc(name):
             raise AtlasError("Atlas API IO error")
         mime_type = get_content_type(response.info())
         if (response and mime_type.startswith('application/') and mime_type.endswith('json')):
-            result = json.load(load_response(response))
+            result = json.loads(load_response(response))
             return result
         else:
             return None
