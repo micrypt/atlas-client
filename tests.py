@@ -13,6 +13,4 @@ class AtlasAPITests(unittest.TestCase):
         self.api.content(uri='http://www.bbc.co.uk/programmes/b007rsj5', annotations='description,brand_summary,series_summary')
 
 if __name__ == '__main__':
-
     unittest.main()
-

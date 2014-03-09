@@ -1,7 +1,6 @@
 # Atlas client library
-# Copyright 2010 - Seyi Ogunyemi
+# Copyright 2010-2014 - Seyi Ogunyemi
 # See LICENSE for details
-# References the Tweepy library http://github.com/joshthecoder/tweepy
 
 from datetime import datetime
 import time

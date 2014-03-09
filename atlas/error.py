@@ -1,5 +1,5 @@
 # Atlas client library
-# Copyright 2010 - Seyi Ogunyemi
+# Copyright 2010-2014 - Seyi Ogunyemi
 # See LICENSE for details
 
 class AtlasError(Exception):
