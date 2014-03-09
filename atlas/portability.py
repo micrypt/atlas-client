@@ -17,4 +17,4 @@ def get_content_type(message):
 def load_response(response):
     if hasattr(response, 'readall'):
         return response.readall().decode('utf-8')
-    return response
+    return response.read()
