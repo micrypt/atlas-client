@@ -11,9 +11,6 @@ Inadvertently discovered that there are a TON of results when the publisher is s
 Needless to say, remember to set a limit when uncertain how many results to expect.
 '''
 
-items = atlas_client.playlists(publisher='bbc.co.uk', limit='2')
-
-items_ = atlas_client.schedule(from_='now', to='now.plus.24h', channel_id='cbbh', publisher='bbc.co.uk')
+items = atlas_client.schedule(from_='now', to='now.plus.24h', channel_id='cbbh', publisher='bbc.co.uk')
 
 pprint.pprint(items)
-pprint.pprint(items_)
