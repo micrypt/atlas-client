@@ -5,7 +5,7 @@
 """
 Atlas  API library
 """
-__version__ = '0.2'
+__version__ = '0.3'
 __author__ = 'Seyi Ogunyemi'
 __license__ = 'MIT'
 
